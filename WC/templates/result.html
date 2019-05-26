@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  {%extends "base.html"%} {%block content%}
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1>워드카운트 결과</h1>
+    <br />
+    <h2>당신이 입력한 텍스트는 {{ total }}단어로 구성되어있습니다.</h2>
+
+    <h2>입력한 텍스트는 :</h2>
+    <h5>{{ fulltext }}</h5>
+
+    <h2>가장 많이 입력된 텍스트는</h2>
+
+    <strong
+      ><h5>
+        {{ most_key }}
+        <span class="badge badge-secondary">{{ most_value }}</span>
+      </h5></strong
+    >
+
+    <h1>count :</h1>
+    <br / > {% for key, value in dictionary %}
+    <h5>
+      {{ key }} <span class="badge badge-secondary">{{ value }}</span>
+    </h5>
+    <br />
+    {% endfor %}
+    <a href="{% url 'home'%}"
+      ><button type="button" class="btn btn-outline-primary">
+        다시하기
+      </button></a
+    >
+    {%endblock%}
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  {%extends "base.html"%} {%block content%}
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+        <a href="{% url 'about' %}"><button type="button" class="btn btn-outline-info">about</button></a>
+    <h1>Word Count</h1>
+    <form action="{% url 'result' %}">
+            <label for="exampleFormControlTextarea1">카운팅할 글을 써주세요.</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="fulltext"></textarea>
+      <br />
+      
+      <button type="submit" class="btn btn-success" value="count">Submit</button>
+    </form>
+    {%endblock%}
+  </body>
+</html>
